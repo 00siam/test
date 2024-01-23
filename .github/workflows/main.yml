@@ -1,0 +1,19 @@
+name: PUblish website to CPanel
+on:
+  push:
+    branches: 
+        - main
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+      -name: FTP-Deploy-Action
+      users: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrests.FTP_SERVER }}
+        ftp-username: ${{ secrests.FTP_USERNAME }}
+        ftp-password: ${{ secrests.FTP_PASSWORD }}
