@@ -1,6 +1,6 @@
 name: PUblish website to CPanel
-'on':
-  push:
+on:
+   push:
     branches:
       - main
 jobs:
